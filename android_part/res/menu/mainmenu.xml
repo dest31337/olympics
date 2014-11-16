@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/takeoff"
+          android:icon="@drawable/takeoff"
+          android:title="TakeOff"
+          android:showAsAction="always|withText"
+          android:onClick="onMenuItemClick"/>
+    <item android:id="@+id/land"
+          android:title="Land"
+          android:icon="@drawable/land"
+          android:showAsAction="always|withText"
+          android:onClick="onMenuItemClick"/>
+    <item android:id="@+id/switch_cam"
+          android:icon="@drawable/photo"
+          android:title="Switch cam"
+          android:showAsAction="always|withText"
+          android:onClick="onMenuItemClick"/>
+    <item android:id="@+id/disableemergency"
+          android:title="Dis. emergency"
+          android:icon="@drawable/emergency"
+          android:showAsAction="always|withText"
+          android:onClick="onMenuItemClick"/>
+    <item android:id="@+id/saveimg"
+          android:icon="@drawable/save"
+          android:showAsAction="always|withText"
+          android:onClick="onMenuItemClick"/>
+    <item android:id="@+id/settings"
+          android:icon="@drawable/settings"
+          android:showAsAction="always"/>
+</menu>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Stream as module</title>
+    <script src="javascripts/nodecopter-client.js"></script>
+    <script src="javascripts/jquery-2.0.0.js"></script>
+    <script src="javascripts/virtualjoystick.js"></script>
+    <script src="javascripts/client.js"></script>
+</head>
+<body>
+    <h1 id="heading">node.js ar.drone control</h1>
+    <img id="droneStream" style="width: 640px; height: 360px"></img>
+    <!--div id="container" style="width: 640px; height: 360px"></div-->
+    <input id="updateImage" type="checkbox"/> <label for="updateImage">updateImage</label >
+    <input id="updateNavdata" type="checkbox"/> <label for="updateNavdata">updateNavdata</label >
+    <div id="buttons">
+        <button id="takeoff">take off</button>
+        <button id="land">land</button>
+        <button id="stop">stop</button>
+        <button id="up">up</button>
+        <button id="down">down</button>
+        <button id="front">front</button>
+        <button id="back">back</button>
+        <button id="left">left</button>
+        <button id="right">right</button>
+        <button id="clockwise">clockwise</button>
+        <button id="counterClockwise">counterClockwise</button>
+        <button id="disableEmergency">disableEmergency</button>
+    </div>
+    <div id="stats">
+        <div>Battery: <span id="batteryPercentage">(Drone not connected)</span>%</div>
+        <div>Emergency: <span id="emergencyLanding"></span></div>
+        <div>ControlState: <span id="controlState"></span></div>
+        <div>FlyState: <span id="flyState"></span></div>
+        <div>Direction: <span id="clockwiseDegrees"></span>°</div>
+        <div>front/back: <span id="frontBackDegrees"></span>°</div>
+        <div>left/right: <span id="leftRightDegrees"></span>°</div>
+        <div>Altitude: <span id="altitudeMeters"></span>m</div>
+        <div>Velocity (x/y/z): <span id="xVelocity"></span> / <span id="yVelocity"></span> / <span id="zVelocity"></span></div>
+    </div>
+</html>

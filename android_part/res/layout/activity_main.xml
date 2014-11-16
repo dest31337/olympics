@@ -1,0 +1,44 @@
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mainLayout">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="1"
+                android:id="@+id/battery" android:layout_weight="1" android:gravity="center"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="1"
+                android:id="@+id/qr" android:layout_weight="1" android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" android:layout_gravity="bottom" android:layout_weight="1"
+                android:alpha="0.7">
+            <view android:layout_width="200dp"
+                  android:layout_height="200dp"
+                  class="com.MobileAnarchy.Android.Widgets.Joystick.JoystickView" android:id="@+id/jvLeft"
+                  android:layout_gravity="center"/>
+        </FrameLayout>
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" android:layout_gravity="bottom" android:layout_weight="1"
+                android:alpha="0.7">
+            <view android:layout_width="200dp"
+                  android:layout_height="200dp"
+                  class="com.MobileAnarchy.Android.Widgets.Joystick.JoystickView" android:id="@+id/jvRight"
+                  android:layout_gravity="center" android:focusableInTouchMode="false"/>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

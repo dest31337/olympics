@@ -1,0 +1,68 @@
+API серверного модуля для Node.JS "ardrone"
+
+Список возможных GET-запросов
+1) http://server:port/drone/takeoff
+Взлет дрона.
+2) http://server:port/drone/land
+Посадка дрона.
+3) http://server:port/drone/stop
+Остановка движения дрона. Если дрон выполняет движение в каком-либо направлении или вокруг своей оси, то после получения данной команды он зависнет над землей там где команда его застигла. 
+4) http://server:port/drone/disableEmergency
+Сброс аварийной ситуации. Если Дрон совершил аварийную посадку - он не реагирует на команды, пока аварийная ситуация не сброшена.
+5) http://server:port/drone/up?speed=0.5
+Команда дрону совершать движения вверх с половинной возможной скоростью (все скорости лежат в диапазонах от 0.0 до 1.0)
+6) http://server:port/drone/down?speed=0.5
+Аналогично 5) но вниз
+7) http://server:port/drone/front?speed=0.5
+Аналогично 5) но вперед
+8) http://server:port/drone/back?speed=0.5
+Аналогично 5) но назад
+9) http://server:port/drone/left?speed=0.5
+Аналогично 5) но влево
+10) http://server:port/drone/right?speed=0.5
+Аналогично 5) но вправо
+11) http://server:port/drone/clockwise?speed=0.5
+Поворот по часовой стрелке вокруг своей оси с половинной возможной скоростью
+12) http://server:port/drone/counterClockwise?speed=0.5
+Аналогично 11) но против часовой
+
+13) http://server:port/drone/move?x=0.4&y=0.1&z=0.0&rotate=1.0
+Команда задающая комплексное движение дрона в формате направление = скорость, где
+x - направление вперед/назад, скорость соответственно от 0.0 до 1.0 - вперед, от -1.0 до 0.0 - назад
+y - направление вправо/влево, скорость соответственно от 0.0 до 1.0 - вправо, от -1.0 до 0.0 - влево
+z - направление вверх/вниз, скорость соответственно от 0.0 до 1.0 - вверх, от -1.0 до 0.0 - вниз
+
+14) http://server:port/drone/config?key=video:video_channel&value=0
+Команда смены камеры передающей изображение
+При передаче value=0 - изображение берется с передней камеры
+При передаче value=3 - с нижней камеры
+
+15) http://server:port/drone/image
+Запрос для получения текущей картинки с камеры дрона. С какой камеры зависит от того какое значение было послано в команде 14)
+
+16) http://server:port/drone/navdata
+Навигационные данные в JSON формате
+
+17) http://server:port/drone/qr
+Метод для опроса сервера о найденном и расшифрованном QR-коде. Возвращает либо null либо строку - расшифровку QR-кода
+
+18) http://server:port/drone/battery
+Метод для опроса дрона о статусе заряда батареи. Возвращает число в % либо -1, если нет соединения
+
+http://server:port/drone/animate?animation=flipRight&duration=1500
+Performs a pre-programmed flight sequence for a given duration (in ms). animation can be one of the following:
+
+['phiM30Deg', 'phi30Deg', 'thetaM30Deg', 'theta30Deg', 'theta20degYaw200deg',
+'theta20degYawM200deg', 'turnaround', 'turnaroundGodown', 'yawShake',
+'yawDance', 'phiDance', 'thetaDance', 'vzDance', 'wave', 'phiThetaMixed',
+'doublePhiThetaMixed', 'flipAhead', 'flipBehind', 'flipLeft', 'flipRight']
+
+http://server:port/drone/animateLeds?animation=doubleMissile&hz=5&duration=3
+Performs a pre-programmed led sequence at given hz frequency and duration (in sec!). animation can be one of the following:
+
+['blinkGreenRed', 'blinkGreen', 'blinkRed', 'blinkOrange', 'snakeGreenRed',
+'fire', 'standard', 'red', 'green', 'redSnake', 'blank', 'rightMissile',
+'leftMissile', 'doubleMissile', 'frontLeftGreenOthersRed',
+'frontRightGreenOthersRed', 'rearRightGreenOthersRed',
+'rearLeftGreenOthersRed', 'leftGreenRightRed', 'leftRedRightGreen',
+'blinkStandard']

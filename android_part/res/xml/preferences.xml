@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+            android:key="address"
+            android:defaultValue="@string/default_address"
+            android:summary=""
+            android:title="Server address"
+            android:inputType="textUri">
+    </EditTextPreference>
+    <EditTextPreference
+            android:key="mul"
+            android:defaultValue="@string/default_mul"
+            android:summary=""
+            android:title="Speed divider"
+            android:inputType="numberDecimal">
+    </EditTextPreference>
+    <EditTextPreference
+            android:key="sence"
+            android:defaultValue="@string/default_sence"
+            android:summary=""
+            android:title="Joystick sensitivity"
+            android:inputType="numberDecimal">
+    </EditTextPreference>
+    <EditTextPreference
+            android:key="refresh_scr_freq"
+            android:defaultValue="@string/default_refresh_freq"
+            android:summary=""
+            android:title="Time(ms) screen refresh"
+            android:inputType="numberDecimal">
+    </EditTextPreference>
+</PreferenceScreen>

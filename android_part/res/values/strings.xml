@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ARDRoneControl</string>
+    <string name="title_activity_main">ARDRoneControl</string>
+
+    <string name="take_off_command">/drone/takeoff/</string>
+    <string name="land_command">/drone/land/</string>
+    <string name="stop_command">/drone/stop/</string>
+    <string name="move_command">/drone/move?</string>
+    <string name="getimage_command">/drone/image/</string>
+    <string name="battery_command">/drone/battery/</string>
+    <string name="qr_command">/drone/qr/</string>
+    <string name="disable_emergency_command">/drone/disableEmergency</string>
+    <string name="switch_camera">/drone/config</string>
+    <string name="default_address">http://192.168.1.102:31337</string>
+    <string name="default_mul">3</string>
+    <string name="default_sence">3</string>
+    <string name="default_refresh_freq">100</string>
+
+</resources>
